@@ -4,7 +4,7 @@ import java.io.Console;
 import java.util.Scanner;
 
 /**
- * Created by garrettcoggon on 5/4/15.
+ * Created on 5/4/15.
  * "Mario" from CS50 in java form
  */
 public class Mario {
