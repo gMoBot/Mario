@@ -10,26 +10,31 @@ import java.util.Scanner;
 public class Mario {
 
 public static void main(String[] args) {
-        // Solicit and validate user input for height of pyramid
-        Scanner input = new Scanner( System.in );
-        Console c = System.console();
-        int height;
-        do {
-            System.out.print("Enter a positive int less than 23: ");
-            height = input.nextInt();
-        } while (height < 0 || height > 23);
-
-        // Generate pyramid structure based on user input
-        int x = (height - 2);
-        for (int i = height; i > 0; i--){
-            for (int j = 0; j < (i - 1); j++){
-                System.out.printf(" ");
-            }
-            for (int k = 0; k < (i - x ); k++){
-                System.out.printf("#");
-            }
-            System.out.printf("\n");
-            x = x - 2;
-        }
+    // Solicit and validate user input for height of pyramid and output type
+    Scanner input = new Scanner(System.in);
+    Console c = System.console();
+    // Solicit user input for output type
+    // TODO: validate loop and exceptions
+    String out;
+    while (true) {
+        System.out.print("Please enter preferred output type: console or file: ");
+        out = input.next();
+        if (out.equalsIgnoreCase("console")) {
+            break;
+        } else if (out.equalsIgnoreCase("file")) {
+            break;
+        } else
+            continue;
     }
+
+    // Solicit and validate user input for pyramid height
+    int height;
+    do {
+        System.out.print("Enter a positive int less than 23: ");
+        height = input.nextInt();
+    } while (height < 0 || height > 23);
+
+    // Generate pyramid structure based on user input
+    new Pyramid(height, out);
+}
 }
