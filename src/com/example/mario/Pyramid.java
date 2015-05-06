@@ -6,11 +6,11 @@ import java.io.*;
  * Created by garrettcoggon on 5/4/15.
  */
 public class Pyramid {
-    public Pyramid(int height, String out) {
-        if (out.equalsIgnoreCase("console")) {
+    public Pyramid(int height, String type) {
+        if (type.equalsIgnoreCase("console")) {
             //TODO
             new Build(height);
-        } else if (out.equalsIgnoreCase("file")) {
+        } else if (type.equalsIgnoreCase("file")) {
             //TODO: Try-catch file opening
             // CLOSE FILE
             File mario = new File("mario.txt");
