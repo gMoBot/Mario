@@ -4,7 +4,7 @@ package com.example.mario;
  * Created by garrettcoggon on 5/5/15.
  */
 public class Build {
-    // Generate a new pyramid from user input
+    // Generates a new pyramid from user input
     public Build(int height){
         int x = (height - 2);
         for (int i = height; i > 0; i--) {

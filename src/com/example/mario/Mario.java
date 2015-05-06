@@ -14,7 +14,6 @@ public static void main(String[] args) {
     Scanner input = new Scanner(System.in);
     Console c = System.console();
     // Solicit user input for output type
-    // TODO: validate loop and exceptions
     String type;
     StringBuilder stringBuilder = new StringBuilder();
     while (true) {

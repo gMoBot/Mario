@@ -4,34 +4,30 @@ import java.io.*;
 
 /**
  * Created by garrettcoggon on 5/4/15.
+ * Directs system output
  */
 public class Pyramid {
+    //Directs system output
     public Pyramid(int height, String type) {
         if (type.equalsIgnoreCase("console")) {
-            //TODO
             new Build(height);
+            // Changes system output to mario file
         } else if (type.equalsIgnoreCase("file")) {
-            //TODO: Try-catch file opening
-            // CLOSE FILE
             File mario = new File("mario.txt");
             PrintStream output = null;
-
+            // Opens new file, checks for exceptions
             try {
                 FileOutputStream fos = new FileOutputStream(mario);
                 output =new PrintStream(fos);
                 System.setOut(output);
                 new Build(height);
+            // Logs errors with opening the file
             } catch (FileNotFoundException e) {
                 System.out.println("There was a problem finding the file" + e.getMessage());
                 throw new RuntimeException();
             } finally {
                 output.close();
             }
-            //FileOutputStream fos = new FileOutputStream(mario);
-            //PrintStream ps = new PrintStream(fos);
-            //System.setOut(ps);
-            //Call Pyramid Function
-            new Build(height);
         }
     }
 }
