@@ -16,19 +16,14 @@ public class file implements Type{
     @Override
     public void Builder(int height) {
         File mario = new File("mario.txt");
-        PrintStream output = null;
         // Opens new file, checks for exceptions
-        try {
-            FileOutputStream fos = new FileOutputStream(mario);
-            output =new PrintStream(fos);
+        try (FileOutputStream fos = new FileOutputStream(mario); PrintStream output =new PrintStream(fos); ) {
             System.setOut(output);
             new Build(height);
             // Logs errors with opening the file
-        } catch (FileNotFoundException e) {
+        } catch (Exception e) {
             System.out.println("There was a problem finding the file" + e.getMessage());
             throw new RuntimeException();
-        } finally {
-            output.close();
         }
     }
 }
