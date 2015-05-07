@@ -33,7 +33,7 @@ public static void main(String[] args) {
     String type;
     StringBuilder stringBuilder = new StringBuilder();
     do {
-        //stringBuilder.setLength(0);
+        stringBuilder.setLength(0);
         System.out.print("Please enter preferred output type: console or file: ");
         stringBuilder.append(input.next());
         type = stringBuilder.toString();
@@ -47,7 +47,7 @@ public static void main(String[] args) {
 //            break;
 //        } else
 //            continue;
-    } while (!type.equalsIgnoreCase("console") || !type.equalsIgnoreCase("file"));
+    } while (!"file".equalsIgnoreCase(type) && !"console".equalsIgnoreCase(type));
     // Try Mapping names and strings
     Map<String,Type> TypeMap = new HashMap<>();
     TypeMap.put("console", new console());
