@@ -11,9 +11,9 @@ import java.util.Map;
  */
 // Map string options to types for implementation
 public class Pyramid implements CleanString {
-    public static Type createPyramid(String type) {
+    public static Printer createPyramid(String type) {
         // Mapping types to strings
-        Map<String, Type> TypeMap = new HashMap<>();
+        Map<String, Printer> TypeMap = new HashMap<>();
         TypeMap.put("console", new console());
         TypeMap.put("file", new file());
         //final Type ftype = TypeMap.get(type);

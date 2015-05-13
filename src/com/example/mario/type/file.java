@@ -1,17 +1,16 @@
 package com.example.mario.type;
 
 import com.example.mario.Build;
-import com.example.mario.Type;
+import com.example.mario.Printer;
 
 import java.io.File;
-import java.io.FileNotFoundException;
 import java.io.FileOutputStream;
 import java.io.PrintStream;
 
 /**
  * Created by garrettcoggon on 5/6/15.
  */
-public class file implements Type{
+public class file implements Printer {
 
     @Override
     public void Builder(int height) {

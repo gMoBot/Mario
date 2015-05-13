@@ -1,10 +1,6 @@
 package com.example.mario;
 
-import com.example.mario.type.console;
-import com.example.mario.type.file;
 import java.io.Console;
-import java.util.HashMap;
-import java.util.Map;
 import java.util.Scanner;
 
 import static com.example.mario.Pyramid.createPyramid;
@@ -39,7 +35,7 @@ public class Mario {
             type = stringBuilder.toString();
         } while (!"file".equalsIgnoreCase(type) && !"console".equalsIgnoreCase(type));
         // pset3
-        Type pyramid = createPyramid(type);
+        Printer pyramid = createPyramid(type);
         if (pyramid != null) {
             pyramid.Builder(height);
         }
