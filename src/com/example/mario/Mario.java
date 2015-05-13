@@ -15,14 +15,9 @@ import static com.example.mario.Pyramid.createPyramid;
  * "Mario" from CS50 in java form
  */
 public class Mario {
-    //static Pyramid factory;
-//    public Mario(Pyramid factory) {
-//        this.factory = factory;
-//    }
+
     public static void main(String[] args){
 
-    //public void buildMario() {
-//    public Mario createMario(){
         // Solicit and validate user input for height of pyramid and output type
         Scanner input = new Scanner(System.in);
         Console c = System.console();
@@ -43,15 +38,6 @@ public class Mario {
             stringBuilder.append(input.next());
             type = stringBuilder.toString();
         } while (!"file".equalsIgnoreCase(type) && !"console".equalsIgnoreCase(type));
-
-//        // Mapping types to strings
-//        Map<String, Type> TypeMap = new HashMap<>();
-//        TypeMap.put("console", new console());
-//        TypeMap.put("file", new file());
-//        final Type ftype = TypeMap.get(type);
-//        if (ftype != null) {
-//            ftype.Builder(height);
-//        }
         // pset3
         Type pyramid = createPyramid(type);
         if (pyramid != null) {
