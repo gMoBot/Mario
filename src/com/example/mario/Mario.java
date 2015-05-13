@@ -34,7 +34,7 @@ public class Mario {
             stringBuilder.append(input.next());
             type = stringBuilder.toString();
         } while (!"file".equalsIgnoreCase(type) && !"console".equalsIgnoreCase(type));
-        // pset3
+        // pset3 Factory Design Pattern implementation
         Printer pyramid = createPyramid(type);
         if (pyramid != null) {
             pyramid.Builder(height);
