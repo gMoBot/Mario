@@ -3,22 +3,17 @@ package com.example.mario;
 import java.io.Console;
 import java.util.Scanner;
 
-
-
-
 /**
  * Created on 5/4/15.
  * "Mario" from CS50 in java form
  */
 public class Mario {
+    // Solicit and validate user input for height of pyramid and output type
     public static void main(String[] args){
-
-        // Solicit and validate user input for height of pyramid and output type
         Scanner input = new Scanner(System.in);
         Console c = System.console();
 
         // Solicit and validate user input for pyramid height
-//        int height;
         do {
             System.out.print("Enter a positive int less than 23: ");
             height = input.nextInt();
@@ -33,9 +28,8 @@ public class Mario {
             stringBuilder.append(input.next());
             type = stringBuilder.toString();
         } while (!"file".equalsIgnoreCase(type) && !"console".equalsIgnoreCase(type));
-        // pset3 Factory Design Pattern implementation
-//        Printer pyramid = createPyramid(type);
-//        if (pyramid != null) {
+
+        // Employs Singelton Design Patter to implement pyramid
         if ("file".equalsIgnoreCase(type)) {
             SingletonPrinter.getInstance().PrintToFile();
         }
@@ -43,6 +37,7 @@ public class Mario {
             SingletonPrinter.getInstance().PrintToConsole();
         }
     }
+    // Creates accessible variable height for use without passing through functions
     public static int height;
 
 }

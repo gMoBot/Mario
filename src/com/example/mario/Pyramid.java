@@ -1,24 +1,12 @@
 package com.example.mario;
 
-import com.example.mario.type.ToConsole;
-import com.example.mario.type.ToFile;
-
-import java.util.HashMap;
-import java.util.Map;
-
 /**
  * Created by garrettcoggon on 5/11/15.
  */
-// Map string options to types for implementation
+// Overrides toString and implements the creation of the pyramid
 public class Pyramid implements CleanString {
-//    public static Printer createPyramid(String type) {
-//        // Mapping types to strings
-//        Map<String, Printer> TypeMap = new HashMap<>();
-//        TypeMap.put("console", new ToConsole());
-//        TypeMap.put("file", new ToFile());
-//        //final Type ftype = TypeMap.get(type);
-//        return TypeMap.get(type);
-//    }
+
+    // Core logic for creating the pyramid
     public Pyramid(){
         int x = (Mario.height - 2);
         for (int i = Mario.height; i > 0; i--) {

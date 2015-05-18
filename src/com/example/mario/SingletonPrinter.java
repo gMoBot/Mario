@@ -8,7 +8,9 @@ import java.io.PrintStream;
 /**
  * Created by garrettcoggon on 5/15/15.
  */
+//Employs the Singelton Pattern to set system output and call pyramid creation
 public class SingletonPrinter {
+
     private SingletonPrinter(){}
 
     private static SingletonPrinter singletonPrinter;
@@ -22,6 +24,8 @@ public class SingletonPrinter {
     public Pyramid PrintToConsole(){
         return new Pyramid();
     }
+
+    // Set system out to print to file, error checks file opening
     public void PrintToFile(){
         File mario = new File("mario.txt");
         // Opens new file, checks for exceptions
