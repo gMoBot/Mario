@@ -3,7 +3,7 @@ package com.example.mario;
 import java.io.Console;
 import java.util.Scanner;
 
-import static com.example.mario.Pyramid.createPyramid;
+
 
 
 /**
@@ -11,7 +11,6 @@ import static com.example.mario.Pyramid.createPyramid;
  * "Mario" from CS50 in java form
  */
 public class Mario {
-
     public static void main(String[] args){
 
         // Solicit and validate user input for height of pyramid and output type
@@ -19,7 +18,7 @@ public class Mario {
         Console c = System.console();
 
         // Solicit and validate user input for pyramid height
-        int height;
+//        int height;
         do {
             System.out.print("Enter a positive int less than 23: ");
             height = input.nextInt();
@@ -35,9 +34,15 @@ public class Mario {
             type = stringBuilder.toString();
         } while (!"file".equalsIgnoreCase(type) && !"console".equalsIgnoreCase(type));
         // pset3 Factory Design Pattern implementation
-        Printer pyramid = createPyramid(type);
-        if (pyramid != null) {
-            pyramid.Builder(height);
+//        Printer pyramid = createPyramid(type);
+//        if (pyramid != null) {
+        if ("file".equalsIgnoreCase(type)) {
+            SingletonPrinter.getInstance().PrintToFile();
+        }
+        else if ("console".equalsIgnoreCase(type)) {
+            SingletonPrinter.getInstance().PrintToConsole();
         }
     }
+    public static int height;
+
 }

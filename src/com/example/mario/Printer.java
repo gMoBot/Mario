@@ -5,5 +5,5 @@ package com.example.mario;
  */
 public interface Printer {
 
-    public void Builder(int height);
+    public void Builder();
 }
