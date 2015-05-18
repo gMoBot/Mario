@@ -8,11 +8,23 @@ import java.util.Scanner;
  * "Mario" from CS50 in java form
  */
 public class Mario {
+
     // Solicit and validate user input for height of pyramid and output type
-    public static void main(String[] args){
+    public static void main(String[] args) {
+
+        Mario mario = new Mario(SingletonPrinter.getInstance());
+    }
+
+    private final SingletonPrinter singletonPrinter;
+
+    public Mario(SingletonPrinter singletonPrinter) {
+        this.singletonPrinter = singletonPrinter;
+        start();
+    }
+
+    public void start(){
         Scanner input = new Scanner(System.in);
         Console c = System.console();
-
         // Solicit and validate user input for pyramid height
         do {
             System.out.print("Enter a positive int less than 23: ");
@@ -31,10 +43,10 @@ public class Mario {
 
         // Employs Singelton Design Patter to implement pyramid
         if ("file".equalsIgnoreCase(type)) {
-            SingletonPrinter.getInstance().PrintToFile();
+            singletonPrinter.PrintToFile();
         }
         else if ("console".equalsIgnoreCase(type)) {
-            SingletonPrinter.getInstance().PrintToConsole();
+            singletonPrinter.PrintToConsole();
         }
     }
     // Creates accessible variable height for use without passing through functions
