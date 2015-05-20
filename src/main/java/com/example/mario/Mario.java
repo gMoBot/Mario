@@ -1,5 +1,8 @@
 package com.example.mario;
 
+import org.springframework.context.ApplicationContext;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import java.io.Console;
 import java.util.Scanner;
 
@@ -12,17 +15,19 @@ public class Mario {
     // Solicit and validate user input for height of pyramid and output type
     public static void main(String[] args) {
 
-        Mario mario = new Mario(SingletonPrinter.getInstance());
+        // Employs Spring Dependency Injection Framework
+        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+        Mario obj = (Mario) context.getBean("mario");
+        obj.start();
     }
 
     private final SingletonPrinter singletonPrinter;
 
     public Mario(SingletonPrinter singletonPrinter) {
         this.singletonPrinter = singletonPrinter;
-        start();
     }
 
-    public void start(){
+    public void start() {
         Scanner input = new Scanner(System.in);
         Console c = System.console();
         // Solicit and validate user input for pyramid height
@@ -41,12 +46,17 @@ public class Mario {
             type = stringBuilder.toString();
         } while (!"file".equalsIgnoreCase(type) && !"console".equalsIgnoreCase(type));
 
-        // Employs Singelton Design Patter to implement pyramid
+        // Set Spring DI context
+        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+
+        // Employs Spring Dependency Injection to implement pyramid
         if ("file".equalsIgnoreCase(type)) {
-            singletonPrinter.PrintToFile();
+            SingletonPrinter fileprinter = (SingletonPrinter) context.getBean("printToFile");
+            fileprinter.PrintToFile();
         }
         else if ("console".equalsIgnoreCase(type)) {
-            singletonPrinter.PrintToConsole();
+            SingletonPrinter consoleprinter = (SingletonPrinter) context.getBean("printToConsole");
+            consoleprinter.PrintToConsole();
         }
     }
     // Creates accessible variable height for use without passing through functions

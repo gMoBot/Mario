@@ -8,7 +8,7 @@ import java.io.PrintStream;
 /**
  * Created by garrettcoggon on 5/15/15.
  */
-//Employs the Singelton Pattern to set system output and call pyramid creation
+//Employs the Singleton Pattern to set system output and call pyramid creation
 public class SingletonPrinter {
 
     private SingletonPrinter(){}
@@ -40,3 +40,4 @@ public class SingletonPrinter {
     }
 
 }
+

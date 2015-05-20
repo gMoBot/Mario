@@ -20,6 +20,7 @@ public class Pyramid implements CleanString {
             x = x - 2;
         }
     }
+
     // pset3 Overrride toString method to ensure chosen method is formatted exactly as expected
     @Override
     public java.lang.String toString(String type) {
