@@ -24,12 +24,11 @@ public class pyramid implements CleanString {
     // pset3 Overrride toString method to ensure chosen method is formatted exactly as expected
     @Override
     public java.lang.String toString(String type) {
-        String cleanString = null;
         if (type.equalsIgnoreCase("console")) {
-            cleanString = "console";
+            return "console";
         }else if (type.equalsIgnoreCase("file")) {
-            cleanString = "file";
+             return "file";
         }
-        return cleanString;
+        return type;
     }
 }

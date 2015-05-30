@@ -14,19 +14,13 @@ public class Mario {
 
     // Solicit and validate user input for height of pyramid and output type
     public static void main(String[] args) {
-
         // Employs Spring Dependency Injection Framework
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
         Mario obj = (Mario) context.getBean("mario");
         obj.start();
-//
-//        Mario mario = new Mario(Printer.getInstance());
-//        mario.start();
-
     }
 
     private final Printer printer;
-
     public Mario(Printer printer) {
         this.printer = printer;
     }
@@ -50,18 +44,12 @@ public class Mario {
             type = stringBuilder.toString();
         } while (!"file".equalsIgnoreCase(type) && !"console".equalsIgnoreCase(type));
 
-        // Set Spring DI context
-//        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
         // Employs Spring Dependency Injection to implement pyramid
         if ("file".equalsIgnoreCase(type)) {
-//            Printer fileprinter = (Printer) context.getBean("printToFile");
-//            fileprinter.printToFile();
             printer.printToFile();
         }
         else if ("console".equalsIgnoreCase(type)) {
-//            Printer consoleprinter = (Printer) context.getBean("printToConsole");
-//            consoleprinter.printToConsole();
             printer.printToConsole();
         }
     }
