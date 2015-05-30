@@ -19,12 +19,16 @@ public class Mario {
         ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
         Mario obj = (Mario) context.getBean("mario");
         obj.start();
+//
+//        Mario mario = new Mario(Printer.getInstance());
+//        mario.start();
+
     }
 
-    private final SingletonPrinter singletonPrinter;
+    private final Printer printer;
 
-    public Mario(SingletonPrinter singletonPrinter) {
-        this.singletonPrinter = singletonPrinter;
+    public Mario(Printer printer) {
+        this.printer = printer;
     }
 
     public void start() {
@@ -47,16 +51,18 @@ public class Mario {
         } while (!"file".equalsIgnoreCase(type) && !"console".equalsIgnoreCase(type));
 
         // Set Spring DI context
-        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
+//        ApplicationContext context = new ClassPathXmlApplicationContext("application.xml");
 
         // Employs Spring Dependency Injection to implement pyramid
         if ("file".equalsIgnoreCase(type)) {
-            SingletonPrinter fileprinter = (SingletonPrinter) context.getBean("printToFile");
-            fileprinter.PrintToFile();
+//            Printer fileprinter = (Printer) context.getBean("printToFile");
+//            fileprinter.printToFile();
+            printer.printToFile();
         }
         else if ("console".equalsIgnoreCase(type)) {
-            SingletonPrinter consoleprinter = (SingletonPrinter) context.getBean("printToConsole");
-            consoleprinter.PrintToConsole();
+//            Printer consoleprinter = (Printer) context.getBean("printToConsole");
+//            consoleprinter.printToConsole();
+            printer.printToConsole();
         }
     }
     // Creates accessible variable height for use without passing through functions

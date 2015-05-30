@@ -4,10 +4,10 @@ package com.example.mario;
  * Created by garrettcoggon on 5/11/15.
  */
 // Overrides toString and implements the creation of the pyramid
-public class Pyramid implements CleanString {
+public class pyramid implements CleanString {
 
     // Core logic for creating the pyramid
-    public Pyramid(){
+    public pyramid(){
         int x = (Mario.height - 2);
         for (int i = Mario.height; i > 0; i--) {
             for (int j = 0; j < (i - 1); j++) {

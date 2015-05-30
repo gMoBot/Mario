@@ -2,13 +2,13 @@
 
 <beans xmlns="http://www.springframework.org/schema/beans" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
     <bean id="mario" class="com.example.mario.Mario">
-        <constructor-arg name="singletonPrinter" ref="getInstance"/>
+        <constructor-arg name="printer" ref="getInstance"/>
     </bean>
 
-    <bean id="getInstance" class="com.example.mario.SingletonPrinter">
+    <bean id="getInstance" class="com.example.mario.Printer">
     </bean>
-    <bean id="printToConsole" class="com.example.mario.SingletonPrinter">
+    <bean id="printToConsole" class="com.example.mario.Printer">
     </bean>
-    <bean id="printToFile" class="com.example.mario.SingletonPrinter">
+    <bean id="printToFile" class="com.example.mario.Printer">
     </bean>
 </beans>
